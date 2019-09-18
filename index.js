@@ -26,7 +26,7 @@ $(function handleShoppingListEvents(){
             // stop propagation of the click event on .shopping-item-toggle
             event.stopPropagation();
             // append .shopping-item__checked class to <span> element for strike-through text decoration
-            $(event.currentTarget).closest("li").find(".shopping-item").toggleClass("shopping-item__checked");
+            $(this).closest("li").find(".shopping-item").toggleClass("shopping-item__checked");
         });
     }
 
@@ -34,8 +34,8 @@ $(function handleShoppingListEvents(){
         $('ul').on('click', '.shopping-item-delete', function(event){
             // stop propagation of the click event on .shopping-item-delete
             event.stopPropagation();
-            // delete $(event.currentTarget) <li> when .shopping-item-delete click event
-            $(event.currentTarget).closest("li").remove();
+            // delete $(this) <li> when .shopping-item-delete click event
+            $(this).closest("li").remove();
         });
     }
 
